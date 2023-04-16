@@ -1,0 +1,114 @@
+body{
+            height: 100%;
+            background: rgb(255, 130, 232);
+            overflow: hidden;
+
+        }
+        #izbornik {
+            background-color: #1d1345;
+            position:absolute;
+            height: 6%;
+            top:9px;
+            width: 100%;
+            margin-left: -10px;
+            margin-top: -10px;
+            margin-bottom: 100px;
+            padding-right: 10px;
+            box-shadow: 0px 10px 50px 35px  #d836ba;
+            z-index: 0;
+        }
+        #ellyimg{
+            position: relative;
+            display: block;
+            max-height: 90%;
+            max-width: 100%;
+            padding-top: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 0;
+        }
+        #select{
+            align-items: center;
+            z-index: 0;
+            display: flex;
+            position:relative;
+            justify-content: space-evenly;
+            position: relative;
+            margin-top:7%;
+            margin-left: auto;
+            margin-right: auto;
+            width: auto;
+            contain: content;
+            background-color: #d836bac1;
+            box-shadow: 0px 0px 100px 45px  #dd38bf;
+        }
+        #slika{
+            position:sticky;
+            max-height: 100%;
+        }
+        h1{
+            color:whitesmoke;
+            font-family: Arial, Helvetica, sans-serif;
+            text-shadow: 0.5px 1px #1d1345;
+            text-underline-offset: 4px;
+        }
+        #izbor1 *
+        {
+        border-radius: 15px;
+        font-size:xx-large;
+        background-color: white;
+        }
+        input[type=submit] {
+            font-size: 30px;
+            border-radius: 15px;
+            text-align: center;
+          }
+        .d-none{
+            display:none;
+        }
+        .crop {
+            width: 550px;
+            height: 195px;
+            overflow: hidden;
+            background-color: white;
+            border-radius: 15px;
+        }
+        .crop img {
+            object-fit: cover;
+            position:relative;
+            width:300%;
+            height: relative;
+            margin-left: -27%;
+            margin-top: -2%;
+        }
+        .footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .footer a{
+            color:white;
+            font-size: x-large;
+            background-color: #1d1345;
+            padding-bottom: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 7px;
+            border-radius: 10px;
+        }
+        .kako{
+            text-align: center;
+            color:white;
+            font-size: x-large;
+            background-color: #392c70;
+            padding-bottom: 7px;
+            padding-left: 7px;
+            padding-right: 7px;
+            padding-top: 7px;
+            border-radius: 10px;
+        }
+        .kako a{color:white;}

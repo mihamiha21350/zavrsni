@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Elly</title>
+    </head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}"
+    <body>
+        <div id="izbornik">
+            <a href="/home"><img id="ellyimg" src="../static/img/elly2.png"></a>
+        </div>
+        <br>
+        <div id="select">
+            <center>
+            <h1><u>Računanje intervala</u></h1><br>
+            <div id="izbor1">
+                <form id="myForm" action="/posaljiintervali" method="post" style="background: rgba(0,0,0,0);">
+                <select name="ton" style="text-align: center;" type="text" onchange="enableSendOne(this)">
+                  <option value="0" disabled selected>Odaberi ton:</option>
+                  <option value="C4">C</option>
+                  <option value="D4">D</option>
+                  <option value="E4">E</option>
+                  <option value="F4">F</option>
+                  <option value="G4">G</option>
+                  <option value="A4">A</option>
+                  <option value="B4">H</option>
+                </select>
+                <select name="karak" style="text-align: center;" type="text">
+                    <option selected value="">Prirodan</option>
+                    <option value="#">♯</option>
+                    <option value="-">♭</option>
+                </select>
+              <h2>+</h2>
+              <select name="interval" style="text-align: center;" type="text" onchange="enableSendTwo(this)">
+                <option value="0" disabled selected>Odaberi interval:</option>
+                <option value="1">Prima</option>
+                <option value="2">Sekunda</option>
+                <option value="3">Terca</option>
+                <option value="4">Kvarta</option>
+                <option value="5">Kvinta</option>
+                <option value="6">Seksta</option>
+                <option value="7">Septima</option>
+                <option value="8">Oktava</option>
+              </select>
+              <select id="karakint1" class="d-none" name="karakint1" style="text-align: center;" type="text" onchange="enableSendThree1(this)">
+                <option value="5" disabled selected>Odaberi interval:</option>
+                <option value="M">Velika</option>
+                <option value="m">Mala</option>
+                <option value="A">Povećana</option>
+                <option value="D">Smanjena</option>
+              </select>
+              <select id="karakint2" class="d-none" name="karakint2" style="text-align: center;" type="text" onchange="enableSendThree2(this)">
+                <option value="5" disabled selected>Odaberi interval:</option>
+                <option value="P">Čista</option>
+                <option value="D">Smanjena</option>
+                <option value="A">Povećana</option>
+              </select>
+            </div>
+              <br>
+                <input class="d-none" id="posalji" type="submit" value="Izračunaj!" onclick="prijenos()">
+                <p></p>
+                <input type="hidden" id="variableInput" name="k" value="">
+                </form>
+                <div class="crop" style="align-content: center; margin-left: auto; margin-right: auto;">
+                    <img src="../static/note/interval.svg" alt="">
+                </div>
+            </center>
+        </div>
+        <div class="footer">
+            <a href="http://mihaeltalan.from.hr">Mihael Talan</a>
+        </div>
+    </body>
+    <script>
+        var a = 0;
+        var b = 0;
+        var c = 0;
+        var k=0;
+        function prijenos(){
+            document.getElementById('variableInput').value = k;
+
+            document.getElementById('myForm').submit();
+        }
+        function enableSendOne(answer) {
+            if (answer.value != 0) {
+            a = 1;
+            } else {
+            a = 0;
+            }
+            enableSend();
+        }
+
+        function enableSendTwo(answer) {
+            if (answer.value != 0) {
+            b = 1;
+            if (answer.value == "1" || answer.value == "4" || answer.value == "5" || answer.value == "8") {
+                c=0;
+                document.getElementsByName('karakint2')[0].classList.remove('d-none');
+                document.getElementsByName('karakint1')[0].classList.add('d-none');
+            }
+            if (answer.value == "2" || answer.value == "3" || answer.value == "6" || answer.value == "7") {
+                c=0;
+                document.getElementsByName('karakint1')[0].classList.remove('d-none');
+                document.getElementsByName('karakint2')[0].classList.add('d-none');
+            }
+            } else {
+            b = 0;
+            }
+            enableSend();
+        }
+        function enableSendThree1(answer) {
+            if (answer.value != 5) {
+            c = 1;
+            k=document.getElementById('karakint1').value
+            } else {
+            c = 0;
+            k=0;
+            }
+            enableSend();
+        }
+        function enableSendThree2(answer) {
+            if (answer.value != 5) {
+            c = 1;
+            k=document.getElementById('karakint2').value
+            } else {
+            c = 0;
+            k=0;
+            }
+            enableSend();
+        }
+        function enableSend() {
+            if (a == 1 && b == 1 && c==1) {
+            document.getElementById('posalji').classList.remove('d-none');
+            } else {
+            document.getElementById('posalji').classList.add('d-none');
+            }
+        }
+    </script>
+</html>

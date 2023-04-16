@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Elly</title>
+    </head>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/ljestvica.css')}}"
+    <body>
+        <div id="izbornik">
+            <a href="/home"><img id="ellyimg" src="../static/img/elly2.png"></a>
+        </div>
+        <br>
+        <div id="select">
+            <center>
+            <h1><u>Gradnja ljestvica</u></h1><br>
+            <div id="izbor1">
+                <form id="myForm" action="/posaljiljestvice" method="post" style="background: rgba(0,0,0,0);">
+                <select name="ton" id="ton" style="text-align: center;" type="text" onchange="enableSendOne(this)"">
+                  <option value="0" disabled selected>Odaberi ton:</option>
+                  <option value="C4">C</option>
+                  <option value="D4">D</option>
+                  <option value="E4">E</option>
+                  <option value="F4">F</option>
+                  <option value="G4">G</option>
+                  <option value="A4">A</option>
+                  <option value="B4">H</option>
+                </select>
+                <select name="karak" style="text-align: center;" type="text">
+                    <option selected value="">Prirodan</option>
+                    <option value="#">♯</option>
+                    <option value="-">♭</option>
+                </select>
+                <br>
+                <select name="tip" style="text-align: center;" type="text" onchange="enableSendTwo(this)">
+                    <option selected disabled value="0">Tip</option>
+                    <option value="dur">Dur</option>
+                    <option value="mol">Mol</option>
+                    <option value="dorska">Dorska</option>
+                    <option value="frigijska">Frigijska</option>
+                    <option value="lidijska">Lidijska</option>
+                    <option value="miksolidijska">Miksolidijska</option>
+                </select>
+            </div>
+              <br>
+                <input class="d-none" id="posalji" type="submit" value="Izračunaj!" onclick="prijenos()">
+                <p></p>
+                <input type="hidden" id="variableInput" name="k" value="">
+                </form>
+                <div class="crop" style="align-content: center; margin-left: auto; margin-right: auto;">
+                    <img src="../static/note/ljestvica.svg" alt="">
+                </div>
+                <br>
+                <br>
+                <div class="kako"><a href="/kakoizgraditiljestvicu">Kako izgraditi ljestvicu?</a></div>
+            </center>
+        </div>
+        <div class="footer">
+            <a href="http://mihaeltalan.from.hr">Mihael Talan</a>
+        </div>
+    </body>
+    <script>
+        var a;
+        var b;
+        function prijenos(){
+            document.getElementById('myForm').submit();
+        }
+        function enableSend() {
+        if (a==1 && b==1) {
+            document.getElementById('posalji').classList.remove('d-none');
+        } else {
+            document.getElementById('posalji').classList.add('d-none');
+        }
+    }
+    function enableSendOne(answer) {
+        if (answer.value != 0) {
+            a=1;
+        } else {
+            a=0;
+        }
+        enableSend();
+    }
+    function enableSendTwo(answer) {
+        if (answer.value != 0) {
+            b=1;
+        } else {
+            b=0;
+        }
+        enableSend();
+    }
+    </script>
+</html>

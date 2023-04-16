@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Elly</title>
+    </head>
+    <style>
+        #lineUp {
+            position: absolute;
+            width: 33%;
+            height: auto;
+            top:33%;
+            margin-left: 33%;
+            font-size: xx-large;
+            text-align: center;
+            opacity: 0;
+            animation: anim-lineUp 3.5s ease-in 1s;
+        }
+
+        img {
+            width: 70%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        body{
+            height: 100%;
+            background: rgb(241,156,225);
+            background: linear-gradient(315deg, rgba(241,156,225,1) 0%, rgba(232,87,205,1) 100%);
+            overflow: hidden;
+        }
+
+        html{
+            height: 100%
+        }
+
+        @keyframes anim-lineUp {
+            0% {
+            opacity: 0;
+            transform: translateY(80%);
+            }
+            6% {
+            opacity: 0;
+            }
+            15% {
+            opacity: 0;
+            transform: translateY(20%);
+            }
+            20% {
+            opacity: 1;
+            transform: translateY(0%);
+            }
+            21%{
+                opacity:1;
+            }
+            79%{
+                opacity:1;
+            }
+            80% {
+            opacity: 1;
+            transform: translateY(0%);
+            }
+            93% {
+            opacity: 1;
+            transform: translateY(0%);
+            }
+            97% {
+            opacity: 0;
+            }
+            100% {
+            opacity: 0;
+            transform: translateY(-80%);
+            }
+            }
+    </style>
+    <script>
+        setTimeout(myURL, 6000);
+        function myURL() {
+           document.location.href = 'home';
+        }
+     </script>
+    <body>
+        <div id="lineUp">
+            <img src="../static/img/elly.png">
+        </div>
+    </body>
+</html>

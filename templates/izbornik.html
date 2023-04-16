@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Elly</title>
+    <style>
+        body{
+            height: 100%;
+            background: rgb(255, 130, 232);
+            overflow: hidden;
+        }
+        #izbornik {
+            background-color: #1d1345;
+            position: absolute;
+            height: 6%;
+            top: 9px;
+            width: 100%;
+            margin: -10px;
+            padding-right: 10px;
+            box-shadow: 0px 10px 50px 35px  #d836ba;
+            z-index: 0;
+            justify-content: space-evenly;
+            align-content: center;
+        }
+        #ellyimg{
+            position: relative;
+            display: block;
+            max-height: 90%;
+            max-width: 100%;
+            padding-top: 4px;
+            margin-left: auto;
+            margin-right: auto;
+            z-index: 2;
+        }
+        #select{
+            z-index: 0;
+            display: flex;
+            position:relative;
+            justify-content: space-evenly;
+            position: relative;
+            margin-top:14%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: auto;
+            width: auto;
+            height: 300px;
+            contain: content;
+            background-color: #d836bac1;
+            box-shadow: 0px 0px 100px 45px  #dd38bf;
+        }
+        #slika{
+            position:sticky;
+            max-height: 100%;
+        }
+        .footer{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 10px;
+            color: white;
+            text-align: center;
+        }
+        .footer a{
+            color:white;
+            font-size: x-large;
+            background-color: #1d1345;
+            padding-bottom: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-top: 7px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="izbornik">
+        <a href="/home"><img id="ellyimg" src="../static/img/elly2.png"></a>
+    </div>
+    <center>
+        <div id="select">
+            <a href="/intervali"><img id="slika" src="../static/img/racunanjeintervala.png"></a>
+            <a href="/ljestvice"><img id="slika" src="../static/img/gradnjaljestvica.png"></a>
+            <a href="/akordi"><img id="slika" src="../static/img/racunanjeakorada.png"></a>
+        </div>
+    </center>
+    <div class="footer">
+        <a href="http://mihaeltalan.from.hr">Mihael Talan</a>
+    </div>
+</body>
+</html>
